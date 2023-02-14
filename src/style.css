@@ -1,0 +1,74 @@
+@font-face {
+  font-family: NewEddy;
+  src: url("/assets/font/NewEddy-Display.woff2");
+}
+
+@font-face {
+  font-family: AppleLiSung;
+  src: url("/assets/font/AppleLiSung-Light.ttf");
+}
+#app {
+  font-family: NewEddy, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+.background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  letter-spacing: 10px;
+}
+
+.top {
+  position: relative;
+}
+
+.picnic {
+  font-size: 30vmin;
+}
+
+.chinese {
+  font-family: AppleLiSung, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 10vmin;
+  display: flex;
+  justify-content: space-between;
+  width: 90vmin;
+  margin: auto;
+}
+
+.chinese span {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 5vmin 1.8vmin;
+}
+
+.art-festival,
+.beijing {
+  font-size: 15vmin;
+}
+
+#canvas {
+  position: absolute;
+}
+
+@media only screen and (max-width: 560px) {
+  .art-festival,
+  .beijing {
+    font-size: 13vmin;
+  }
+}
