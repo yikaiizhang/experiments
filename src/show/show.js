@@ -37,12 +37,14 @@ function showBegins() {
   // Model
   const loader = new GLTFLoader();
   const dracoLoader = new DRACOLoader();
-  dracoLoader.setDecoderPath("/decoder/");
+  dracoLoader.setDecoderPath(
+    "../node_modules/three/examples/js/libs/draco/gltf/"
+  );
   loader.setDRACOLoader(dracoLoader);
 
   let banana;
   loader.load(
-    "https://cdn.shopify.com/s/files/1/0601/6676/6614/files/banana-v1-transformed.glb",
+    "https://cdn.shopify.com/s/files/1/0601/6676/6614/files/banana-v1-transformed.glb?v=1676400749",
     (gltf) => {
       banana = gltf.scene;
       banana.castShadow = true;
@@ -51,6 +53,8 @@ function showBegins() {
       render();
     }
   );
+
+  console.log(loader);
 
   // Light
   const lightColor = 0xffffff;
