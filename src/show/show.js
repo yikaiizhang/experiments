@@ -2,7 +2,7 @@ import "./show.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+// import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 function showBegins() {
   const canvas = document.querySelector("#canvas");
@@ -36,21 +36,28 @@ function showBegins() {
 
   // Model
   const loader = new GLTFLoader();
-  const dracoLoader = new DRACOLoader();
-  dracoLoader.setDecoderPath(
-    "../node_modules/three/examples/js/libs/draco/gltf/"
-  );
-  loader.setDRACOLoader(dracoLoader);
+  // const dracoLoader = new DRACOLoader();
+  // dracoLoader.setDecoderPath(
+  //   "../node_modules/three/examples/js/libs/draco/gltf/"
+  // );
+  // loader.setDRACOLoader(dracoLoader);
 
   let banana;
   loader.load(
-    "https://cdn.shopify.com/s/files/1/0601/6676/6614/files/banana-v1-transformed.glb?v=1676400749",
+    "https://cdn.shopify.com/s/files/1/0601/6676/6614/files/banana-v1.glb?v=1676402722",
     (gltf) => {
       banana = gltf.scene;
       banana.castShadow = true;
       banana.receiveShadow = true;
       scene.add(banana);
       render();
+    }, // called while loading is progressing
+    function (xhr) {
+      console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+    },
+    // called when loading has errors
+    function (error) {
+      console.log("An error happened", error);
     }
   );
 
