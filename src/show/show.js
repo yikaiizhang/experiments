@@ -41,13 +41,16 @@ function showBegins() {
   loader.setDRACOLoader(dracoLoader);
 
   let banana;
-  loader.load("/assets/model/banana-v1-transformed.glb", (gltf) => {
-    banana = gltf.scene;
-    banana.castShadow = true;
-    banana.receiveShadow = true;
-    scene.add(banana);
-    render();
-  });
+  loader.load(
+    "https://cdn.shopify.com/s/files/1/0601/6676/6614/files/banana-v1-transformed.glb",
+    (gltf) => {
+      banana = gltf.scene;
+      banana.castShadow = true;
+      banana.receiveShadow = true;
+      scene.add(banana);
+      render();
+    }
+  );
 
   // Light
   const lightColor = 0xffffff;
